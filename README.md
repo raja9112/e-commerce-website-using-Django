@@ -1,10 +1,6 @@
 # e-commerce-website-using-Django
 Discover Django's eCommerce potential with our project. Explore product listings, user authentication, cart management, and responsive design. No payment module included. Ideal for learning Django essentials.
 
-# Django eCommerce Playground
-
-Explore Django's eCommerce capabilities in this project. This repository showcases core eCommerce features without payment integration, making it an ideal learning resource for Django enthusiasts.
-
 ## Features
 
 - Product Listings: Browse through the product catalog.
