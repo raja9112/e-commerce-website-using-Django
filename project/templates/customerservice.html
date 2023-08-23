@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Terms and Conditions | Web Shop
+{% endblock %}
+
+{% block body %}
+
+<style>
+.line{
+    border:2px solid rgb(218, 117, 134);
+}
+.container{
+    color: black;
+    font-size: medium;
+    
+}
+summary{
+    padding: 5px;
+    border-bottom: 1px solid rgb(218, 117, 134);
+    width: 40%;
+}
+.para{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid rgb(218, 117, 134);
+}
+.link{
+    color: blue;
+}
+.queries{
+    width: 50%;
+    border-radius: 5px;
+}
+.btn{
+    background-color: rgb(218, 117, 134);
+    color: white;
+    margin-top: 7px;
+}
+.btn:hover{
+    background-color: rgb(198, 99, 116);
+}
+.usr{
+    border-color: rgb(218, 117, 134);
+    border-radius: 5px;
+    display: grid;
+    margin-top: 7px;
+     width:50%;
+}
+
+
+</style>
+<br>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-primary alert-dismissible fade show mb-0" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% if user.is_authenticated %}
+<div class="greetings">
+<h1 style="font-weight: bolder; font-family: 'Quattrocento Sans', sans-serif; font-size: 1cm;">
+    Hello, {{user.first_name}} {{user.last_name}}. What can we help you with &#63
+</h1>
+{% else %}
+<div class="greetings">
+    <h1 style="font-weight: bolder; font-family: 'Quattrocento Sans', sans-serif; font-size: 1cm;">
+        Hello, What can we help you with &#63
+    </h1>
+{% endif %}
+
+<hr class="line">
+
+<div class="container">
+<details>
+    <summary>Covid19 precautions.</summary>
+    <div class="container">
+        <details>
+            <summary>What is No-Contact delivery?</summary>
+            <p class="para">Web Shop is focused on the health and safety of our customers and employees. Based on regional regulations and social distancing requirements; there is a change to the way we’re delivering your items. To adhere to the contactless or no-contact delivery, the delivery associate will leave your order at your doorstep and maintain a 2-meter distance.
+
+                Learn more about what we are doing to ensure the safety of our employees, associates, delivery and transportation partners</p>
+        </details>        
+        <details>    
+            <summary>What is Web Shop doing to keep customers and employees safe?</summary>
+            <p class="para">Safety of our customers and teams continues to be our top most priority. We continue to follow stringent safety protocols such as use of face covering, regular hand sanitization, social distancing with innovative technology in our buildings and contactless deliveries among 100 other process changes we have made in our operations since the beginning of the pandemic.
+
+                We are supporting our selling partners with vaccination, and working with them to safely serve customers while then can manage the financial burden of the lockdowns.</p>
+        </details>
+    </div>
+</details>
+
+<details>
+    <summary>How to change password?</summary>
+    <p class="para">Go to profile, click change password which is under your profile picture. And fill the required credentials to change password.
+        <br>Navigate me to the page <a href="account/changepassword/" class="link">change password</a>
+    </p>
+</details>
+
+<details>
+    <summary>How to update my profile?</summary>
+    <p class="para">Go to profile, click update profile which is under your profile picture. And fill the required credentials to update.
+        <br>Navigate me to the page <a href="account/updateprofile/" class="link">Update profile</a>
+    </p>
+</details>
+</div>
+<br><br>
+
+</div>
+
+<div class="container">
+    <h1>Find more solutions to your queries or Wanna be a partner? ping us</h1>
+    <form action="{% url 'ticket' %}" method="POST">
+        {% csrf_token %}
+    <div class="container">
+    {% if user.is_authenticated %}
+        <input type="text" name="names" class="usr name" value="{{user.first_name}} {{user.last_name}}" required >
+        <input type="email" name="emails" class="usr email" value="{{user.email}}" required>
+    {% else %}
+        <input type="text" name="names" class="usr name"  placeholder="Name" required>
+        <input type="email" name="emails" class="usr email" placeholder="Email"required>
+    {% endif %}
+</div>
+<div class="container">
+    <textarea name="queries" class=" usr queries" cols="30" rows="10" placeholder="Raise a query here." required></textarea>
+    <button type="submit" class="btn">Submit</button></div>
+    </form>
+</div>
+<br><br><br>
+
+
+
+
+{% endblock %}
