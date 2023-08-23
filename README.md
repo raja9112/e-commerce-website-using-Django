@@ -17,11 +17,12 @@ Discover Django's eCommerce potential with our project. Explore product listings
 ## Usage
 
 1. Clone the repository.
-2. Set up a virtual environment and install dependencies using `pip`.
-3. Configure database settings in the Django project's settings.
-4. Run migrations to set up the database.
-5. Launch the development server using `python manage.py runserver`.
-6. Access the project through your browser to explore eCommerce features.
+2. Set up a virtual environment `py -m venv venv `.
+3. Install requirements using ` pip install -r requirements.txt `.
+4. Configure database settings in the Django project's settings.
+5. Run migrations to set up the database.
+6. Launch the development server using `python manage.py runserver`.
+7. Access the project through your browser to explore eCommerce features.
 
 ## Note
 
