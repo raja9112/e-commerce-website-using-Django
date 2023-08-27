@@ -32,7 +32,9 @@ This project is intended for educational purposes and can be extended to include
 
 This project is open-source under the MIT License, encouraging collaboration and learning.
 
-## License
+## Screenshot
 ![ecommerce](https://github.com/raja9112/e-commerce-website-using-Django/assets/126778382/5bda6d0d-a083-4840-bef2-6bf7a4a40bd2)
+![admin page](https://github.com/raja9112/e-commerce-website-using-Django/assets/126778382/eefbfcac-329a-41cd-99ca-15a1af222c6c)
+![ec](https://github.com/raja9112/e-commerce-website-using-Django/assets/126778382/3525efe2-93a9-4ddc-82e5-bcbf31676866)
 
 
